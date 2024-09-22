@@ -31,7 +31,7 @@
             "scale": {"scheme": "reds"}
         },
         "tooltip": [
-            {"field": "properties.name", "type": "nominal", "title": "State"},
+            {"field": "properties.Name", "type": "nominal", "title": "State"},
             {"field": "rate", "type": "quantitative", "title": "Death Rate"}
         ]
     }
