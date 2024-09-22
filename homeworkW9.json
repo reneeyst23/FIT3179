@@ -9,27 +9,27 @@
     },
     "transform": [
         {
-            "lookup": "properties.state_name",  
+            "lookup": "properties.name",  
             "from": {
                 "data": {
-                    "url": "path/to/your-death-rates.csv",  
+                    "url": "data/death_state.csv",  
                     "format": {"type": "csv"}
                 },
                 "key": "state",  
-                "fields": ["death_rate"]  
+                "fields": ["rate"]  
             }
         }
     ],
     "mark": "geoshape",
     "encoding": {
         "color": {
-            "field": "death_rate",
+            "field": "rate",
             "type": "quantitative",
             "scale": {"scheme": "reds"}
         },
         "tooltip": [
-            {"field": "properties.state_name", "type": "nominal", "title": "State"},
-            {"field": "death_rate", "type": "quantitative", "title": "Death Rate"}
+            {"field": "properties.name", "type": "nominal", "title": "State"},
+            {"field": "rate", "type": "quantitative", "title": "Death Rate"}
         ]
     }
 }
