@@ -7,7 +7,7 @@
                    "parallels": [0, 10]},
 
     "data": {
-        "url": "https://raw.githubusercontent.com/reneeyst23/FIT3179/refs/heads/main/data/test.json",  
+        "url": "https://raw.githubusercontent.com/reneeyst23/FIT3179/refs/heads/main/data/malaysia.json",  
         "format": {"type": "topojson", "feature": "states"}
     },
     "transform": [
