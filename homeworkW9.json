@@ -1,18 +1,21 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 700,
+    "width": 800,
     "height": 500,
-    "projection": {"type": "mercator"},
+    "projection": {"type": "albers",
+                   "center": [105, 2.5],
+                   "parallels": [0, 10]},
+
     "data": {
-        "url": "data/malaysia.json",  
+        "url": "https://raw.githubusercontent.com/reneeyst23/FIT3179/refs/heads/main/data/test.json",  
         "format": {"type": "topojson", "feature": "states"}
     },
     "transform": [
         {
-            "lookup": "properties.name",  
+            "lookup": "properties.Name",  
             "from": {
                 "data": {
-                    "url": "data/death_state.csv",  
+                    "url": "https://raw.githubusercontent.com/reneeyst23/FIT3179/refs/heads/main/data/death_state.csv",  
                     "format": {"type": "csv"}
                 },
                 "key": "state",  
