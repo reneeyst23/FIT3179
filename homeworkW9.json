@@ -1,0 +1,35 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 700,
+    "height": 500,
+    "projection": {"type": "mercator"},
+    "data": {
+        "url": "data/malaysia.json",  
+        "format": {"type": "topojson", "feature": "states"}
+    },
+    "transform": [
+        {
+            "lookup": "properties.state_name",  
+            "from": {
+                "data": {
+                    "url": "path/to/your-death-rates.csv",  
+                    "format": {"type": "csv"}
+                },
+                "key": "state",  
+                "fields": ["death_rate"]  
+            }
+        }
+    ],
+    "mark": "geoshape",
+    "encoding": {
+        "color": {
+            "field": "death_rate",
+            "type": "quantitative",
+            "scale": {"scheme": "reds"}
+        },
+        "tooltip": [
+            {"field": "properties.state_name", "type": "nominal", "title": "State"},
+            {"field": "death_rate", "type": "quantitative", "title": "Death Rate"}
+        ]
+    }
+}
