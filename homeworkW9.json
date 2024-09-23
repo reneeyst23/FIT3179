@@ -1,38 +1,58 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 800,
-    "height": 500,
-    "projection": {"type": "albers",
-                   "center": [105, 2.5],
-                   "parallels": [0, 10]},
-
-    "data": {
-        "url": "https://raw.githubusercontent.com/reneeyst23/FIT3179/refs/heads/main/data/malaysia.json",  
-        "format": {"type": "topojson", "feature": "states"}
-    },
-    "transform": [
-        {
-            "lookup": "properties.Name",  
-            "from": {
-                "data": {
-                    "url": "https://raw.githubusercontent.com/reneeyst23/FIT3179/refs/heads/main/data/death_state.csv",  
-                    "format": {"type": "csv"}
-                },
-                "key": "state",  
-                "fields": ["rate"]  
+    "config": {
+        "style": {
+            "tooltip": {
+                "align": "left"
             }
         }
-    ],
-    "mark": "geoshape",
-    "encoding": {
-        "color": {
-            "field": "rate",
-            "type": "quantitative",
-            "scale": {"scheme": "reds"}
+    },
+    "width": 800,
+    "height": 500,
+    "projection": {"type": "equalEarth"},
+    "layer": [
+        {
+            "data": {
+                "url": "https://raw.githubusercontent.com/reneeyst23/FIT3179/refs/heads/main/data/map.json",  
+                "format": {"type": "topojson", "feature": "1"}
+            },
+            "mark": {
+                "type": "geoshape",
+                "fill": "lightgray",
+                "stroke": "white"
+            }
         },
-        "tooltip": [
-            {"field": "properties.Name", "type": "nominal", "title": "State"},
-            {"field": "rate", "type": "quantitative", "title": "Death Rate"}
-        ]
-    }
+        {
+            "data": {
+                "url": "https://raw.githubusercontent.com/reneeyst23/FIT3179/refs/heads/main/data/malaysia.json",  
+                "format": {"type": "topojson", "feature": "states"}
+            },
+            "transform": [
+                {
+                    "lookup": "properties.Name",  
+                    "from": {
+                        "data": {
+                            "url": "https://raw.githubusercontent.com/reneeyst23/FIT3179/refs/heads/main/data/death_state.csv",  
+                            "format": {"type": "csv"}
+                        },
+                        "key": "state",  
+                        "fields": ["rate"]  
+                    }
+                }
+            ],
+            "mark": "geoshape",
+            "encoding": {
+                "color": {
+                    "field": "rate",
+                    "title": "Death Rate",
+                    "type": "quantitative",
+                    "scale": {"scheme": "blues"}
+                },
+                "tooltip": [
+                    {"field": "properties.Name", "type": "nominal", "title": "State"},
+                    {"field": "rate", "type": "quantitative", "title": "Death Rate"}
+                ]
+            }  
+        }
+    ]
 }
