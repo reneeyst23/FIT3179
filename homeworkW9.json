@@ -28,12 +28,12 @@
         },
         {
             "data": {
-                "url": "https://raw.githubusercontent.com/reneeyst23/FIT3179/refs/heads/main/data/my.json",  
-                "format": {"type": "topojson", "feature": "features"}
+                "url": "https://raw.githubusercontent.com/reneeyst23/FIT3179/refs/heads/main/data/malaysia.json",  
+                "format": {"type": "topojson", "feature": "states"}
             },
             "transform": [
                 {
-                    "lookup": "properties.name",  
+                    "lookup": "properties.Name",  
                     "from": {
                         "data": {
                             "url": "https://raw.githubusercontent.com/reneeyst23/FIT3179/refs/heads/main/data/death_state.csv",  
@@ -53,7 +53,7 @@
                     "scale": {"scheme": "blues"}
                 },
                 "tooltip": [
-                    {"field": "properties.name", "type": "nominal", "title": "State"},
+                    {"field": "properties.Name", "type": "nominal", "title": "State"},
                     {"field": "rate", "type": "quantitative", "title": "Death Rate"}
                 ]
             }  
