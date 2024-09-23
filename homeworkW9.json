@@ -11,8 +11,8 @@
     "height": 500,
     "projection": {
         "type": "equalEarth",
-        "center": [109, 3.6],  
-        "scale": 2200
+        "center": [109, 4.5],  
+        "scale": 2530
     },
     "layer": [
         {
@@ -50,7 +50,15 @@
                     "field": "rate",
                     "title": "Death Rate",
                     "type": "quantitative",
-                    "scale": {"scheme": "blues"}
+                    "scale": {"scheme": "blues"},
+                    "legend": {
+                        "titleFontSize": 14, 
+                        "labelFontSize": 12,  
+                        "gradientLength": 200,  
+                        "orient": "top-right", 
+                        "titleFont": "Arial",  
+                        "labelFont": "Arial"   
+                    }
                 },
                 "tooltip": [
                     {"field": "properties.name", "type": "nominal", "title": "State"},
