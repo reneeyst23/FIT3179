@@ -48,7 +48,7 @@
             "encoding": {
                 "color": {
                     "field": "rate",
-                    "title": "Death Rate",
+                    "title": "Death rate per 1000 population",
                     "type": "quantitative",
                     "scale": {"scheme": "blues"},
                     "legend": {
@@ -62,7 +62,7 @@
                 },
                 "tooltip": [
                     {"field": "properties.name", "type": "nominal", "title": "State"},
-                    {"field": "rate", "type": "quantitative", "title": "Death rate per 1000 population"}
+                    {"field": "rate", "type": "quantitative", "title": "Death Rate"}
                 ]
             }  
         }
