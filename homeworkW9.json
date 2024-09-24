@@ -52,7 +52,7 @@
                     "type": "quantitative",
                     "scale": {"scheme": "blues"},
                     "legend": {
-                        "titleFontSize": 14, 
+                        "titleFontSize": 12, 
                         "labelFontSize": 12,  
                         "gradientLength": 200,  
                         "orient": "top-right", 
