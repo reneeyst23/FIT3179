@@ -62,7 +62,7 @@
                 },
                 "tooltip": [
                     {"field": "properties.name", "type": "nominal", "title": "State"},
-                    {"field": "rate", "type": "quantitative", "title": "Death Rate"}
+                    {"field": "rate", "type": "quantitative", "title": "Death rate per 1000 population"}
                 ]
             }  
         }
